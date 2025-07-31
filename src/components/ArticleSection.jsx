@@ -1,5 +1,10 @@
 export default function ArticleSection({ article }) {
     const thumbnail = article.multimedia?.[0]?.url;
+    const articleDate = new Date(article.published_date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+    });
 
     return (
         <div className="flex flex-col justify-between border-b pb-5">
@@ -8,7 +13,7 @@ export default function ArticleSection({ article }) {
             </a>
             <div className="flex items-start justify-between mt-3">
                 <div className="text-sm w-2/3 text-left">
-                    <p className="text-gray-600 text-xs mt-2">Aug 18</p>
+                    <p className="text-gray-600 text-xs mt-2 text font-bold">{articleDate}</p>
                     <p className="text-gray-700 text-left">
                         {article.abstract}
                     </p>

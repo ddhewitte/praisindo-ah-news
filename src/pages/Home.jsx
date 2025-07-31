@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { callArticles } from "../services/call";
 import ArticleSection from "../components/ArticleSection";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Home() {
 
@@ -14,11 +15,14 @@ export default function Home() {
 
   return (
     <>
-      <header>
+      <header className="px-4 py-4">
         <div>
-          <h1>The best | <small className="text-xl"> news for you</small></h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            The best | <small className="text-base md:text-xl font-normal text-gray-600">news for you</small>
+          </h1>
         </div>
-      </header>  
+      </header>
+  
 
       <Navbar />
 
@@ -32,12 +36,14 @@ export default function Home() {
           <a href="#">See All</a>
         </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-         {articles.map((a) => (
-            <ArticleSection key={a.url} article={a} />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {articles.map((a) => (
+              <ArticleSection key={a.url} article={a} />
           ))}
-          </div>
+        </div>
       </div>
+
+      <Footer />
     </>
     
   )
