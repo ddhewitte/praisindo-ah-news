@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { searchArticles } from "../services/call";
 import Navbar from "./Navbar";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Search() {
 
@@ -32,7 +33,7 @@ export default function Search() {
                         </a>
                         <div className="flex items-start justify-between">
                             <div className="text-sm w-2/3 text-left">
-                                <p className="text-gray-600 text-xs mt-2 font-bold">2025-07-31</p>
+                                <p className="text-gray-600 text-xs mt-2 font-bold">{ article.pub_date.split("T")[0]} </p>
                                 <p className="text-gray-700 text-left">
                                     {article.abstract}
                                 </p>
@@ -41,6 +42,8 @@ export default function Search() {
                     </div>
                 ))}    
             </div>
+
+            <Footer />
         </>
     );
 }
