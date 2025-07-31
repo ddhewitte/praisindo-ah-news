@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { callArticles } from "../services/call";
 import ArticleSection from "../components/ArticleSection";
 import Navbar from "./Navbar";
+import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -15,15 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="px-4 py-4">
-        <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
-            The best | <small className="text-base md:text-xl font-normal text-gray-600">news for you</small>
-          </h1>
-        </div>
-      </header>
-  
-
+      <Header />
       <Navbar />
 
       <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
