@@ -4,12 +4,14 @@ import ArticleSection from "../components/ArticleSection";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 
   const [articles, setArticles] = useState([]);
   const [querySearch, setQuerySearch] = useState("");
   const API_SECTION = 'home';
+  const navigate = useNavigate();
 
   useEffect(() => {
     callArticles(API_SECTION).then(setArticles);
@@ -17,7 +19,9 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Oke')
+    if (querySearch.trim() !== "") {
+      navigate(`/search?q=${encodeURIComponent(querySearch)}`);
+    }
   };
 
   return (
