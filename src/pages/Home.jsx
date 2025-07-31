@@ -37,7 +37,7 @@ export default function Home() {
                   className="border p-2 rounded w-64 mr-2 bg-gray-200"
                   placeholder="Title ..."
               />
-              <button className="bg-blue-600 text-white px-4 py-2 rounded">
+              <button className="bg-blue-600 text-white px-4 py-2 rounded mt-2 md:mt-0">
                   Search Article
               </button>
         </form>
